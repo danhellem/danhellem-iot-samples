@@ -7,7 +7,6 @@
 import os
 import asyncio
 import uuid
-import time
 from azure.iot.device.aio import IoTHubDeviceClient
 from azure.iot.device import Message
 
@@ -15,7 +14,7 @@ messages_to_send = 10
 
 async def main():
     # The connection string for a device should never be stored in code. For the sake of simplicity we're using an environment variable here.
-    conn_str = "HostName=danhellem-iot-hub.azure-devices.net;DeviceId=pythonDevice;SharedAccessKey=C+K/oMqkHPhi1Atn/iiCqo/scUHFC2hAVK3rMKYhW8s="
+    conn_str = os.getenv("IOTHUB_DEVICE_CONNECTION_STRING")
   
     # The client object is used to interact with your Azure IoT hub.
     device_client = IoTHubDeviceClient.create_from_connection_string(conn_str)
