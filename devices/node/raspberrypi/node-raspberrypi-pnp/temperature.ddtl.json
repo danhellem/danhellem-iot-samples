@@ -1,0 +1,20 @@
+{
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:com:example:simpledevice;1",
+    "@type": "Interface",
+    "displayName": "Simple device",
+    "description": "Example that shows model for simple device converted to act as an IoT Plug and Play device.",
+    "contents": [
+      {
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "name": "temperature",
+        "displayName": "Temperature",
+        "description": "Temperature in degrees Fahrenheit.",
+        "schema": "double",
+        "unit": "degreeFahrenheit"
+      }       
+    ]
+  }
